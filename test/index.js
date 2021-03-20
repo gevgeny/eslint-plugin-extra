@@ -1,0 +1,1 @@
+require('./react-prefer-functional-component.test');
