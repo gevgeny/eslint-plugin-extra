@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-extra",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Extra rules for ESLint",
   "main": "index.js",
   "homepage": "https://github.com/gevgeny/eslint-plugin-extra/blob/main/readme.md",
