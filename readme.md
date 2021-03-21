@@ -1,12 +1,12 @@
 ESLint-plugin-extra
 ===================
 Extra rules for ESLint
-# Installation
+## Installation
 ```sh
 $ npm install eslint-plugin-extra --save-dev
 ```
 
-# Configuration
+## Configuration
 Add "extra" to the plugins section.
 
 ```json
@@ -25,12 +25,14 @@ Enable the rules that you would like to use.
   }
 ```
 
-# List of supported rules
+## List of supported rules
 
-## Enforces using functional React components (extra/react-prefer-functional-component)
+### extra/react-prefer-functional-component
+Enforce using functional React components 
 
-Since hooks are shipped in React, there is not much reason to use class components. See [Do Hooks cover all use cases for classes?](https://reactjs.org/docs/hooks-faq.html#do-hooks-cover-all-use-cases-for-classes)   
-### Rule Details
+>Since hooks are shipped in React, there is not much reason to use class components. 
+>See ["Motivation for using React Hooks"](https://reactjs.org/docs/hooks-intro.html#motivation) and ["Do Hooks cover all use cases for classes?"](https://reactjs.org/docs/hooks-faq.html#do-hooks-cover-all-use-cases-for-classes)  
+#### Rule Details
 
 
 Examples of **incorrect** code for this rule:
@@ -99,7 +101,7 @@ class MyComponent extends React.Component {
 }
 ```
 
-### Options
+#### Options
 This rule has an object option:
 ```json
 {
@@ -111,19 +113,22 @@ This rule has an object option:
 }
 
 ```
-#### allowWithComponentDidCatch
-default:`true`
+`allowWithComponentDidCatch`
+
+default: `true`
 
 Allows using class components with `componentDidCatch` method.
 
 
-#### allowWithGetDerivedStateFromError
-default:`true`
+`allowWithGetDerivedStateFromError`
+
+default: `true`
 
 Allows using class components with `getDerivedStateFromError` static method.
 
-#### allowWithGetSnapshotBeforeUpdate
-default:`true`
+`allowWithGetSnapshotBeforeUpdate`
+
+default: `true`
 
 Allows using class components with `getSnapshotBeforeUpdate` method.
 
