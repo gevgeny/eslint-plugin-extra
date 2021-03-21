@@ -31,7 +31,7 @@ module.exports = function (context) {
     if (!node.parent) {
       return false;
     }
-    console.log('pragma', pragma, createClass, `^(${pragma}\\.)?${createClass}$`);
+
     return new RegExp(`^(${pragma}\\.)?${createClass}$`).test(sourceCode.getText(node.parent.callee));
   }
 
