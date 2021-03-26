@@ -11,7 +11,14 @@
     "type": "git",
     "url": "https://github.com/gevgeny/eslint-plugin-extra"
   },
-  "keywords": ["eslint", "eslint-plugin", "eslintplugin", "react"],
+  "keywords": [
+    "eslint",
+    "eslint-plugin",
+    "eslintplugin",
+    "react",
+    "no-nested-destructuring",
+    "react-prefer-functional-component"
+  ],
   "author": "Eugene Gluhotorenko",
   "license": "MIT",
   "devDependencies": {
