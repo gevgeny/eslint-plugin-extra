@@ -63,15 +63,13 @@ const { b } = obj.a;
 This rule has an object option:
 ```json
 {
-    "extra/react-prefer-functional-component": ["error", { "allowForArrays": true }]
+    "extra/no-nested-destructuring": ["error", { "allowForArrays": true }]
 }
 
 ```
-`allowForArrays`
+`allowForArrays` (default: `false`)
 
-default: `false`
-
-Allows nested destructuring for arrays..
+Allows nested destructuring for arrays.
 
 
 ### extra/react-prefer-functional-component
@@ -160,22 +158,16 @@ This rule has an object option:
 }
 
 ```
-`allowWithComponentDidCatch`
-
-default: `true`
+`allowWithComponentDidCatch` (default: `true`)
 
 Allows using class components with `componentDidCatch` method.
 
 
-`allowWithGetDerivedStateFromError`
-
-default: `true`
+`allowWithGetDerivedStateFromError` (default: `true`)
 
 Allows using class components with `getDerivedStateFromError` static method.
 
-`allowWithGetSnapshotBeforeUpdate`
-
-default: `true`
+`allowWithGetSnapshotBeforeUpdate` (default: `true`)
 
 Allows using class components with `getSnapshotBeforeUpdate` method.
 
