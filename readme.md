@@ -67,9 +67,7 @@ This rule has an object option:
 }
 
 ```
-`allowForArrays` (default: `false`)
-
-Allows nested destructuring for arrays.
+`allowForArrays` (default: `false`) – Allows nested destructuring for arrays.
 
 
 ### extra/react-prefer-functional-component
@@ -158,18 +156,11 @@ This rule has an object option:
 }
 
 ```
-`allowWithComponentDidCatch` (default: `true`)
+`allowWithComponentDidCatch` (default: `true`) – Allows using class components with `componentDidCatch` method.
 
-Allows using class components with `componentDidCatch` method.
+`allowWithGetDerivedStateFromError` (default: `true`) – Allows using class components with `getDerivedStateFromError` static method.
 
-
-`allowWithGetDerivedStateFromError` (default: `true`)
-
-Allows using class components with `getDerivedStateFromError` static method.
-
-`allowWithGetSnapshotBeforeUpdate` (default: `true`)
-
-Allows using class components with `getSnapshotBeforeUpdate` method.
+`allowWithGetSnapshotBeforeUpdate` (default: `true`) – Allows using class components with `getSnapshotBeforeUpdate` method.
 
 
 
