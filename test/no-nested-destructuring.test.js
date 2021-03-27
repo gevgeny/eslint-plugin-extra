@@ -49,7 +49,7 @@ ruleTester.run("no-nested-destructuring", rule, {
       code: 'const [[a = 1] = 5] = b;',
       errors: [{ message: 'Nested destructuring is disallowed' }]
     }, {
-      code: 'const {a, {b, ...rest1 }, ...rest2 } = b;',
+      code: 'const { a: { b, ...rest1 }, ...rest2 } = c;',
       errors: [{ message: 'Nested destructuring is disallowed' }]
     }
   ]

@@ -1,12 +1,3 @@
-const pragmaUtil = require('eslint-plugin-react/lib/util/pragma');
-const astUtil = require('eslint-plugin-react/lib/util/ast');
-
-const defaultConfig = {
-  allowWithComponentDidCatch: true,
-  allowWithGetDerivedStateFromError: true,
-  allowWithGetSnapshotBeforeUpdate: true,
-}
-
 module.exports = function (context) {
   function report(node) {
     context.report({
