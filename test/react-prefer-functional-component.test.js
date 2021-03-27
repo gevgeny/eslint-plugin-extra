@@ -1,4 +1,5 @@
 const rule = require("../rules/react-prefer-functional-component");
+const { typeScriptEslint } = require("./parsers");
 const RuleTester = require("eslint").RuleTester;
 
 const ruleTester = new RuleTester(
@@ -27,7 +28,15 @@ ruleTester.run("react-prefer-functional-component", rule, {
           getSnapshotBeforeUpdate() { }
         }
       `,
-    }
+    },
+    {
+      code: `
+        class MyComponent extends Component<{}, {}> {
+          static getDerivedStateFromError(error: Error) { }
+        }
+      `,
+      parser: typeScriptEslint,
+    },
   ],
   invalid: [
     {
@@ -43,18 +52,21 @@ ruleTester.run("react-prefer-functional-component", rule, {
         class MyComponent extends Component { }
       `,
       errors: [{ message: "Component should be functional" }]
-    }, {
+    },
+    {
       code: `
         const clazz = class extends Component { }
       `,
       errors: [{ message: "Component should be functional" }]
-    }, {
+    },
+    {
       code: `
         import React from 'react';
         class MyComponent extends React.Component { }
       `,
       errors: [{ message: "Component should be functional" }]
-    }, {
+    },
+    {
       code: `
         import React from 'react';
         class MyComponent extends React.Component {
@@ -63,7 +75,8 @@ ruleTester.run("react-prefer-functional-component", rule, {
       `,
       options: [{ allowWithComponentDidCatch: false }],
       errors: [{ message: "Component should be functional" }]
-    }, {
+    },
+    {
       code: `
         import React from 'react';
         class MyComponent extends React.Component {
@@ -72,7 +85,8 @@ ruleTester.run("react-prefer-functional-component", rule, {
       `,
       options: [{ allowWithGetDerivedStateFromError: false }],
       errors: [{ message: "Component should be functional" }]
-    }, {
+    },
+    {
       code: `
         import React from 'react';
         class MyComponent extends React.Component {
@@ -81,6 +95,13 @@ ruleTester.run("react-prefer-functional-component", rule, {
       `,
       options: [{ allowWithGetSnapshotBeforeUpdate: false }],
       errors: [{ message: "Component should be functional" }]
+    },
+    {
+      code: `
+        const clazz = class extends Component<{}, {}> { }
+      `,
+      errors: [{ message: "Component should be functional" }],
+      parser: typeScriptEslint,
     }
   ]
 });
